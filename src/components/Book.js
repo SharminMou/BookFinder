@@ -9,7 +9,10 @@ const Book = (props) => {
             <Link to={{
                 pathname:"/BookDetails",
                 state: {
-                    bookTitle: props.data.volumeInfo.title
+                    title: props.data.volumeInfo.title,
+                    authors: props.data.volumeInfo.authors[0],
+                    thumbnail: props.data.volumeInfo.imageLinks.thumbnail
+                    
                 }
                 }}>
                 <div class="col s12 m4">

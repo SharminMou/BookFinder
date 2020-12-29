@@ -3,8 +3,8 @@ const NavBar = () => {
     return (
         <div>
             <nav>
-                <div className="nav-wrapper">
-                    <a href="#" className="brand-logo" > Book Finder </a>
+                <div className="nav-wrapper" style={{backgroundColor:"#0c2233"}}>
+                    <a href="#" className="brand-logo center" style={{color:"#ffd700"}} > Book Finder </a>
                 </div>
             </nav>
         </div>

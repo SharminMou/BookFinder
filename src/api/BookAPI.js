@@ -3,7 +3,7 @@ const BookAPI = axios.create({
     baseURL: "https://www.googleapis.com/books/"
 });
 
-const getBooks = (searchTerm, setBooks) => {
+const getBooks = (searchTerm, setBooks, pageNumber, setTotalPages) => {
     BookAPI.get("/v1/volumes", {
         params: {
             q: searchTerm,
