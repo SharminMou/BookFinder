@@ -15,6 +15,9 @@ const Home = (props) => {
     const [books, setBooks] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [booksPerPage] = useState(6);
+    const [sort, setSort] = useState("");
+    let sortedBooks = [];
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         await getBooks(searchTerm, setBooks);
@@ -29,6 +32,41 @@ const Home = (props) => {
     const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
+    const handleSort = (event) => {
+        console.log(event.target.value);
+        setSort(event.target.value);
+        if (event.target.value === "Newest") {
+            sortedBooks = books.sort((a, b) => {
+                if (a.volumeInfo.publishedDate && a.volumeInfo.publishedDate != null) {
+                    return parseInt(b.volumeInfo.publishedDate.substring(0, 4)) - parseInt(a.volumeInfo.publishedDate.substring(0, 4))
+                }
+            })
+        }
+        else if (event.target.value === "Oldest") {
+            sortedBooks = books.sort((a, b) => {
+
+                if (a.volumeInfo.publishedDate && a.volumeInfo.publishedDate) {
+                    return parseInt(a.volumeInfo.publishedDate.substring(0, 4)) - parseInt(b.volumeInfo.publishedDate.substring(0, 4))
+                }
+
+            })
+
+        }
+        else if (event.target.value === "Ascending") {
+            sortedBooks = books.sort((a, b) => {
+                return a.volumeInfo.title.localeCompare(b.volumeInfo.title);
+            })
+
+        }
+        else if (event.target.value === "Descending") {
+            sortedBooks = books.sort((a, b) => {
+                return a.volumeInfo.title.localeCompare(b.volumeInfo.title);
+            })
+            sortedBooks = sortedBooks.reverse();
+        }
+        setBooks(sortedBooks);
+    }
+
 
     return (
 
@@ -40,14 +78,16 @@ const Home = (props) => {
                     backgroundImage: `url(${bgPhoto})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 2000,
-                    height: 1100,
+                    height: 1150,
                     alignItems: "center",
                 }}>
-                    <div className="drop-search" >
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <Dropdowns />
-                        </ul>
-                        <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} />
+                    <div className="search" >
+                        <SearchBar
+                            handleChange={handleChange}
+                            handleSubmit={handleSubmit}
+                            handleSort={handleSort}
+                            sort={sort}
+                        />
                     </div>
                     <BookList books={currentBooks} />
                     {books.length != 0 ?

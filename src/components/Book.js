@@ -10,14 +10,15 @@ const Book = (props) => {
                 pathname:"/BookDetails",
                 state: {
                     title: props.data.volumeInfo.title,
-                    authors: props.data.volumeInfo.authors[0],
-                    thumbnail: props.data.volumeInfo.imageLinks.thumbnail,
+                    authors: props.data.volumeInfo.authors ? props.data.volumeInfo.authors[0] : null,
+                    thumbnail: props.data.volumeInfo.imageLinks ? props.data.volumeInfo.imageLinks.thumbnail : null,
                     publishedDate: props.data.volumeInfo.publishedDate,
                     publisher: props.data.volumeInfo.publisher,
                     averageRating: props.data.volumeInfo.averageRating,
                     contentVersion: props.data.volumeInfo.contentVersion,
                     language: props.data.volumeInfo.language,
                     pageCount: props.data.volumeInfo.pageCount,
+                    description: props.data.volumeInfo.description,
                     
                 }
                 }}>
