@@ -1,0 +1,26 @@
+.image-card{
+    justify-items: center;
+}
+
+.details-container{
+    background-color: #127681;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    
+}
+.details{
+    font-size: 2200;
+}
+.card-container{
+    background-color: #127681;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.image-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}

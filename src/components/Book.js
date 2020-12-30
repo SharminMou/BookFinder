@@ -11,7 +11,13 @@ const Book = (props) => {
                 state: {
                     title: props.data.volumeInfo.title,
                     authors: props.data.volumeInfo.authors[0],
-                    thumbnail: props.data.volumeInfo.imageLinks.thumbnail
+                    thumbnail: props.data.volumeInfo.imageLinks.thumbnail,
+                    publishedDate: props.data.volumeInfo.publishedDate,
+                    publisher: props.data.volumeInfo.publisher,
+                    averageRating: props.data.volumeInfo.averageRating,
+                    contentVersion: props.data.volumeInfo.contentVersion,
+                    language: props.data.volumeInfo.language,
+                    pageCount: props.data.volumeInfo.pageCount,
                     
                 }
                 }}>
