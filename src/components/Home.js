@@ -6,7 +6,6 @@ import { getBooks } from "../api/BookAPI";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Pagination from "./Pagination";
 import "../style/Home.css";
-import Dropdowns from "../components/Dropdown";
 import bgPhoto from "../20130207-KINDLE-OLD-BOOKS-031edit-1024x683.jpg";
 
 

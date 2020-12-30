@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Link, Route } from "react-router-dom";
-import "../style/Pagination.css";
-
+import "../style/Home.css";
 
 const Pagination = ({ currentPage, setCurrentPage, booksPerPage, totalBooks, paginate }) => {
     const pageNumbers = [];

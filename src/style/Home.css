@@ -12,3 +12,62 @@
 .drop-search{
     height: 1200;
 }
+
+.search-sort{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+::placeholder { 
+    color: black;
+    opacity: 3;
+  }
+  .image-card{
+    justify-items: center;
+}
+
+.details-container{
+    background-color: #a3d2ca;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-container{
+    background-color: #127681;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.image-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    padding-right: 100px;
+    padding-left: 100px;
+
+}
+.nav{
+    background-color: #5fb9b0;
+    justify-content: center;
+    display: flex;
+
+}
